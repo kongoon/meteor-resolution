@@ -1,0 +1,96 @@
+/* CSS declarations go here */
+@import url('https://fonts.googleapis.com/css?family=Mitr:200,300,400,500,600,700&subset=thai');
+@import url('bootstrap.min.css');
+
+body {
+  font-family: 'Mitr', sans-serif;
+  font-weight: 200;
+  font-size: 16px;
+}
+.nav {
+  font-size: 18px;
+}
+.navbar-brand {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.topbar {
+    color: #eee;
+    font-size: 11px;
+    background: #182735;
+    padding: .2em;
+}
+.navbar {
+    border-radius: 0;
+}
+.navbar .menu-icon {
+    text-align: center;
+    font-size: 12px;
+}
+.navbar .menu-icon img {
+    width: 24px;
+}
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+.navbar-nav>li>a {
+    padding-top: 10.5px;
+    padding-bottom: 5.5px;
+}
+
+#home_module_list {
+    padding: 2em 0;
+    text-align: center;
+    position: relative;
+}
+.module_item {
+    min-width: 7em;
+    display: inline-block;
+    text-align: center;
+}
+.module_item a {
+    display: block;
+}
+
+.footer {
+	margin-top: 10px;
+    background-color: #333333;
+    border-top: 1px solid #ddd;
+    padding-top: 40px;
+    color: #f9f9f9;
+}
+.footer h4{
+	color: #f9f9f9;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+@media (min-width: 768px){
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+}
+
+.nav > li > form > button:hover {
+    text-decoration: none;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: red;
+}

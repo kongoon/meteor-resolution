@@ -1,0 +1,122 @@
+<head>
+  <title>resolution</title>
+</head>
+
+<body>
+  <div class="topbar hidden-xs">
+        <div class="container">
+            <div class="navbar-left">
+                <div class="timef text-right">
+                    Test
+                </div>
+            </div>
+
+            <div class="navbar-right" style="margin:0">
+
+            </div>
+        </div>
+    </div>
+
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><i class="fa fa-fire"></i> Meteor</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="menu-icon active"><a href="#"><img src="assets/img/icon/tractor.png"><br />หน้าหลัก <span class="sr-only">(current)</span></a></li>
+        <li class="menu-icon"><a href="#">Link</a></li>
+        <li class="menu-icon dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+        <li>{{> loginButtons}}</li>
+      </ul>
+
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  <div class="container">
+
+    <header>
+      <h1>ความมุ่งมั่นที่จะทำ</h1>
+
+      <div class="form-group">
+        <label for="hideFinished" class="hide-finished">
+          <input id="hideFinished" type="checkbox" checked="{{hideFinished}}" />
+          ซ่อนความมุ่งมั่นที่เสร็จแล้ว
+        </label>
+      </div>
+      {{#if currentUser}}
+      <form class="new-resolution">
+        <div class="form-group">
+          <input type="text" name="title" class="form-control" placeholder="เพิ่มความมุ่งมั่นใหม่" />
+        </div>
+        <div class="form-group">
+          <input type="submit" value="เพิ่มข้อมูล" class="btn btn-success" />
+        </div>
+      </form>
+      {{/if}}
+    </header>
+    <div class="row">
+      <div class="col-sm-12">
+
+          {{#each resolutions}}
+            {{> resolution}}
+          {{/each}}
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="container">
+      Test
+    </div>
+
+
+  </div>
+</body>
+
+<template name="resolution">
+  <div class="row">
+    <div class="col-sm-8 text-left">
+      {{#if isOwner}}
+      <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+
+        <button class="toggle-private btn btn-info btn-xs">
+          {{#if private}}
+            <i class="fa fa-lock"></i> ส่วนตัว
+          {{else}}
+            <i class="fa fa-users"></i> เผยแพร่
+          {{/if}}
+        </button>
+      {{/if}}
+      <span class="{{#if checked}}checked{{/if}}">{{title}}</span>
+    </div>
+    {{#if isOwner}}
+    <div class="col-sm-4 text-right">
+      <button class="delete btn btn-xs btn-danger"><i class="fa fa-trash"></i> ลบ</button>
+    </div>
+    {{/if}}
+    </div>
+</template>
